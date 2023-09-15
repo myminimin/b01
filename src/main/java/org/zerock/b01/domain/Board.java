@@ -23,4 +23,10 @@ public class Board extends BaseEntity {
 
     @Column(length = 50, nullable = false)
     private String writer;
+
+    public void change(String title, String content){
+        this.title = title;
+        this.content = content;
+    }   // Entity 클래스는 가능하면 최소한의 변경이나 불변(immuatble)하게 설계하는 것이 좋지만
+        // 강제적인 사항은 아니다. Board의 경우 '제목/내용' 정도는 수정이 가능하므로 change() 라는 메소드를 추가한다.
 }
